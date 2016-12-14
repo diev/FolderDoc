@@ -78,7 +78,7 @@ namespace FolderDoc
                     Id = Guid.NewGuid(),
                     Order = ++order,
                     Name = fi.Name,
-                    Ext = fi.Extension,
+                    Ext = fi.Extension.ToLower(),
                     Text = fi.LastWriteTime.ToShortDateString(),
                     FileName = fi.FullName
                 };
