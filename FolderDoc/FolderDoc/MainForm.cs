@@ -15,7 +15,9 @@ namespace FolderDoc
             InitializeComponent();
 
             db = new ItemDbContext();
+            //TODO: fix some crushes on Load
             db.Items.Load();
+            db.Links.Load();
             dataGridView1.DataSource = db.Items.Local.Select(d => new
             {
                 d.Name,
@@ -24,8 +26,6 @@ namespace FolderDoc
                 d.FileName,
                 d.Id
             }).ToList();
-
-            db.Links.Load();
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
