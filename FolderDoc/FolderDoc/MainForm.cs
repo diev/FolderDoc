@@ -17,7 +17,6 @@ namespace FolderDoc
             db = new ItemDbContext();
             //TODO: fix some crushes on Load
             db.Items.Load();
-            db.Links.Load();
             dataGridView1.DataSource = db.Items.Local.Select(d => new
             {
                 d.Name,
@@ -30,13 +29,23 @@ namespace FolderDoc
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
+            if ((sender as DataGridView).SelectedRows.Count != 1)
+                return;
+
             Guid id = (Guid)((sender as DataGridView).CurrentRow.Cells["Id"].Value);
 
-            var parents = db.Links.Where(c => c.ChildId == id).Select(p => p.Parent).ToList();
-            var children = db.Links.Where(p => p.ParentId == id).Select(c => c.Child).ToList();
+            db.Links.Load();
+            var parents = db.Links
+                .Where(c => c.ChildId == id)
+                .Select(p => p.Parent.Name)
+                .ToList();
+            var children = db.Links
+                .Where(p => p.ParentId == id)
+                .Select(c => c.Child.Name)
+                .ToList();
 
-            listBox1.DataSource = parents.Select(i => i.Name).ToList();
-            listBox2.DataSource = children.Select(i => i.Name).ToList();
+            listBox1.DataSource = parents;
+            listBox2.DataSource = children;
         }
     }
 }

@@ -10,27 +10,21 @@ namespace FolderDoc
 {
     public class Item
     {
-        [Key]
         public Guid Id { get; set; }
 
         [Required]
         //[Index("NameIndex", IsUnique = true)]
         //[StringLength(200)]
-        [Column("Название")]
         public string Name { get; set; }
 
-        [Column("Тип")]
         public string Ext { get; set; }
 
-        [Column("Ремарки")]
         public string Text { get; set; }
 
-        [Column("Файл")]
         public string FileName { get; set; }
 
         // Add your custom properties above this line
 
-        [Column("Порядок")]
         public int? Order { get; set; }
 
         [Timestamp]
@@ -38,10 +32,7 @@ namespace FolderDoc
 
         // Navigation Properties
 
-        [InverseProperty("Parent")]
         public virtual ICollection<Link> Parents { get; set; }
-
-        [InverseProperty("Child")]
         public virtual ICollection<Link> Children { get; set; }
     }
 
@@ -55,10 +46,7 @@ namespace FolderDoc
 
         // Navigation Properties
 
-        [ForeignKey("ParentId")]
         public virtual Item Parent { get; set; }
-
-        [ForeignKey("ChildId")]
         public virtual Item Child { get; set; }
     }
 
