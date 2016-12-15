@@ -133,10 +133,16 @@ namespace FolderDoc
             protected override void Seed(ItemDbContext db)
             {
                 base.Seed(db);
+                db.Configuration.AutoDetectChangesEnabled = false;
+                db.Configuration.ValidateOnSaveEnabled = false;
+
                 string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                 DirectoryInfo di = new DirectoryInfo(path);
                 db.SeedFolder(di, Guid.Empty, false);
                 db.SaveChanges();
+
+                db.Configuration.AutoDetectChangesEnabled = true;
+                db.Configuration.ValidateOnSaveEnabled = true;
             }
         }
     }
