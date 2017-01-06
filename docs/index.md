@@ -1,4 +1,4 @@
-# [FolderDoc](http://diev.github.io/FolderDoc/)
+# FolderDoc
 
 Folders and Documents linkable in both directions.
 
@@ -80,4 +80,5 @@ Referencing* таблицей `Items`, но в такую модель данн�
 
 ## License
 
-Licensed under the [Apache License, Version 2.0](LICENSE).
+Licensed under the [Apache License, 
+Version 2.0](http://www.apache.org/licenses/LICENSE-2.0 "LICENSE").

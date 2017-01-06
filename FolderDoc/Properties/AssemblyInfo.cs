@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("FolderDoc")]
 [assembly: AssemblyDescription("Folders and Documents linkable in both directions.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("AO City Invest Bank")]
 [assembly: AssemblyProduct("FolderDoc")]
-[assembly: AssemblyCopyright("Copyright © Dmitrii Evdokimov 2016")]
+[assembly: AssemblyCopyright("Copyright © 2016-2017 Dmitrii Evdokimov")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
