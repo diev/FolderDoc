@@ -1,7 +1,8 @@
 # FolderDoc
 
-Folders and Documents linkable in both directions.
+[![Build status](https://ci.appveyor.com/api/projects/status/naqbx5c8kbjw2hmp?svg=true)](https://ci.appveyor.com/project/diev/folderdoc)
 
+Folders and Documents linkable in both directions.  
 Папки и документы со ссылками в обе стороны.
 
 ## Сценарии использования
