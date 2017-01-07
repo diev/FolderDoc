@@ -39,6 +39,8 @@ install:
     $env:BuildDate = $CommitDateTime.AddHours(3).ToString('dd.MM.yyyy')
 
     Write-Host "Building v$env:APPVEYOR_BUILD_VERSION dated $env:BuildDate"
+before_build:
+- cmd: nuget.exe restore %APPVEYOR_PROJECT_NAME%.sln
 build:
   verbosity: minimal
 before_package:
