@@ -1,6 +1,7 @@
 # [FolderDoc](http://diev.github.io/FolderDoc/)
 
 [![Build status](https://ci.appveyor.com/api/projects/status/naqbx5c8kbjw2hmp?svg=true)](https://ci.appveyor.com/project/diev/folderdoc)
+[![GitHub Release](https://img.shields.io/github/release/diev/FolderDoc.svg)](https://github.com/diev/FolderDoc/releases/latest)
 
 Folders and Documents linkable in both directions.  
 Папки и документы со ссылками в обе стороны.
